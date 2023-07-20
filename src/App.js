@@ -9,6 +9,8 @@ import { darkTheme, GlobalStyles, lightTheme } from "./styles";
 import SignUp from "./screens/SignUp";
 import { HelmetProvider } from "react-helmet-async";
 import routes from "./routes";
+import ShopDetail from "./screens/ShopDetail";
+import AddShop from "./screens/AddShop";
 
 function App() {
   const isLoggedIn = useReactiveVar(isLoggedInVar);
@@ -28,6 +30,12 @@ function App() {
                   <SignUp />
                 </Route>
               ) : null}
+              <Route path={`/add`}>
+                <AddShop />
+              </Route>
+              <Route path={`/shop/:id`}>
+                <ShopDetail />
+              </Route>
               <Route>
                 <NotFound />
               </Route>
